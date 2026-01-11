@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>ManaTyping – Privacy-First Analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">
+    ✍ ManaTyping <span class="muted">Privacy-First Analytics</span>
+  </div>
+  <nav>
+    <span class="active">Write</span>
+    <span>Dashboard</span>
+    <span>Privacy</span>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Write freely. Analyze ethically.</h1>
+  <p>
+    ManaTyping captures your writing rhythm — never your words —
+    to understand effort without invading privacy.
+  </p>
+</section>
+
+<!-- MAIN -->
+<main class="container">
+
+  <!-- WRITING CARD -->
+  <div class="card">
+    <div class="writing-header">
+      <h3>Writing Space</h3>
+      <span class="badge">Privacy-First</span>
+      <button id="startBtn">▶ Start Session</button>
+      <button id="stopBtn" disabled>■ Stop</button>
+    </div>
+
+    <textarea
+      id="editor"
+      placeholder="Click 'Start Session' to begin writing"
+      disabled
+    ></textarea>
+  </div>
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+
+    <div class="card">
+      <h4>Behavior Analysis</h4>
+      <p id="analysisText" class="muted">
+        Start typing to analyze
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Session Statistics</h4>
+
+      <div class="stat">
+        <span>Keystrokes</span>
+        <strong id="keystrokes">0</strong>
+      </div>
+
+      <div class="stat">
+        <span>Duration</span>
+        <strong id="duration">0s</strong>
+      </div>
+
+      <div class="stat">
+        <span>Avg Delay</span>
+        <strong id="avgDelay">0ms</strong>
+      </div>
+
+      <div class="stat">
+        <span>Thinking Time</span>
+        <strong id="thinkingTime">0s</strong>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+<!-- SESSION SUMMARY MODAL -->
+<div id="summaryModal" class="modal">
+  <div class="modal-content">
+    <h3>Session Summary</h3>
+
+    <p><strong>Keystrokes:</strong> <span id="mKeys"></span></p>
+    <p><strong>Duration:</strong> <span id="mDuration"></span></p>
+    <p><strong>Avg Delay:</strong> <span id="mDelay"></span></p>
+    <p><strong>Thinking Time:</strong> <span id="mThinking"></span></p>
+    <p><strong>Behavior:</strong> <span id="mBehavior"></span></p>
+
+   <button onclick="downloadReport()">⬇ Download Effort Report</button>
+<button onclick="restartSession()">🔄 Start New Session</button>
+<button onclick="closeModal()">Close</button>
+
+  </div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>
